@@ -36,7 +36,7 @@
 
         <p>
             <label for="phone"> Numéro de téléphone</label>
-            <input type="number" id="phone" name="phone">
+            <input type="tel" id="phone" name="phone">
         </p>
 
         <p>
