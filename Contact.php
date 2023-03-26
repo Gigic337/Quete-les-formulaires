@@ -29,8 +29,13 @@
                 if (!isset($_POST['lastname']) || trim($_POST['lastname']) === '') {
                     $errors[] = "Le nom est obligatoire";
                 }
-                if (!isset($_POST['email']) || trim($_POST['email']) === '') {
+                if(!isset($_POST['email']) || trim($_POST['email']) === '') {
                     $errors[] = "L'e-mail est obligatoire";
+                } else {
+                    $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+                    if(!$email) {
+                        $errors[] = "L'e-mail est invalide";
+                    }
                 }
                 if (!isset($_POST['phone']) || trim($_POST['phone']) === '') {
                     $errors[] = "Le numéro de téléphone est obligatoire";
